@@ -37,6 +37,18 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script>
+    MathJax = {
+      tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    };
+  </script>
+
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
@@ -49,23 +61,23 @@
           <h1 class="title is-1 publication-title">Multimodal Scenario Similarity Search for Autonomous Driving</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=e1JBdVcAAAAJ">Tamás Matuszka</a><sup>1</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=e1JBdVcAAAAJ">Tamás Matuszka</a>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/andr%C3%A1s-tam%C3%A1sy-58b474232/">András Tamásy</a><sup>1</sup>,</span>
+              <a href="https://www.linkedin.com/in/andr%C3%A1s-tam%C3%A1sy-58b474232/">András Tamásy</a>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/bal%C3%A1zs-szol%C3%A1r-6678731a5">Balázs Szolár</a><sup>1</sup>,
+              <a href="https://www.linkedin.com/in/bal%C3%A1zs-szol%C3%A1r-6678731a5">Balázs Szolár</a>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>aiMotive</span>
+            <span class="author-block">aiMotive</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/TODO"
+                <a href="https://arxiv.org/pdf/2607.09428"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -74,22 +86,12 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/TODO"
+                <a href="https://arxiv.org/abs/2607.09428"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=TODO"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
                 </a>
               </span>
             </div>
@@ -101,137 +103,260 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<!-- Abstract. -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large-scale autonomous-driving datasets contain vast numbers of recorded scenarios, creating a need for efficient retrieval methods that can identify situations similar to a given query. 
-            Existing approaches typically rely on either visual representations or motion-based descriptions, 
-            making it difficult to understand their relative strengths and limitations for scenario retrieval. 
-            In this work, we present a multimodal framework for autonomous-driving scenario retrieval that combines visual and trajectory-based 
-            representations within a unified retrieval pipeline. We investigate two trajectory-based approaches: 
-            Exo-Trajectory, an explicit matching method based on surrounding-agent motion, and ScenarioFormer, 
-            a transformer-based representation learned from object trajectories using contrastive learning. 
-            We compare these approaches against strong vision-based baselines and analyze their behavior across a 
-            diverse set of driving scenarios. Experimental results show that trajectory representations provide strong 
-            retrieval performance for motion-centric events such as cut-ins, turning maneuvers, and traffic queueing, 
-            while visual embeddings excel when appearance cues are informative. Most importantly, combining visual and 
-            trajectory information consistently improves retrieval quality, yielding the best overall performance. 
-            These findings demonstrate that appearance and motion capture are complementary notions of scenario similarity 
-            and motivate multimodal retrieval systems for autonomous-driving data mining, dataset curation, and 
-            scenario-based validation.
+            Large-scale autonomous driving datasets contain millions of recorded scenarios, creating an increasing need for efficient retrieval systems that can identify situations similar to a given query. Existing approaches typically rely on either visual scene representations or trajectory-based motion descriptions, making it difficult to understand the strengths and limitations of each modality for scenario retrieval.
+          </p>
+
+          <p>
+            We present a <b>multimodal scenario retrieval framework</b> that unifies visual and trajectory-based representations within a single retrieval pipeline. Our framework investigates two complementary trajectory retrieval methods: <b>Exo-Trajectory</b>, an explicit matching algorithm based on surrounding-agent motion, and <b>ScenarioFormer</b>, a transformer-based trajectory encoder trained with contrastive learning. These methods are evaluated alongside strong vision-based baselines to study how appearance and motion contribute to scenario similarity.
+          </p>
+
+          <p>
+            Experimental results demonstrate that trajectory representations excel on motion-centric scenarios such as cut-ins, turning maneuvers, and traffic queueing, while vision models perform better when appearance and semantic context provide stronger cues. Most importantly, combining visual and trajectory information consistently produces the highest retrieval performance, highlighting the complementary nature of appearance- and motion-based representations. Our findings motivate multimodal retrieval systems for autonomous-driving data mining, dataset curation, corner-case discovery, and scenario-based validation.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
-<!-- TODO
+<!-- Method Overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-3">Method Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We study autonomous-driving scenario retrieval using two complementary
+            sources of information: <b>visual appearance</b> extracted from video
+            sequences and <b>traffic dynamics</b> extracted from object trajectories.
+            Each modality captures a different notion of similarity. While visual
+            models encode scene semantics, road layout, and appearance, trajectory
+            representations explicitly describe how surrounding traffic participants
+            move and interact with the ego vehicle.
+          </p>
+
+          <p>
+            Our framework consists of four retrieval modules: two vision-based
+            baselines (<b>ViViT</b> and <b>Qwen3-VL</b>) and two trajectory-based
+            approaches (<b>Exo-Trajectory</b> and <b>ScenarioFormer</b>). The final
+            retrieval score is obtained by fusing visual and trajectory similarities,
+            leveraging the complementary strengths of both modalities.
+          </p>
+        </div>
+
+        <div class="has-text-centered">
+          <img src="./static/images/pipeline.png"
+               alt="Overall pipeline"
+               style="max-width:100%;">
+          <p class="is-size-6 has-text-grey">
+            Overview of the proposed multimodal scenario retrieval framework.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Retrieval Modules -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">
+      Retrieval Modules
+    </h2>
+
+    <div class="columns is-multiline">
+
+      <div class="column is-half">
+        <div class="box">
+          <h4 class="title is-5">ViViT</h4>
+          <p>
+            A transformer-based video encoder that extracts spatio-temporal
+            representations from RGB video clips. Similarity is computed using
+            cosine similarity between video embeddings.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="box">
+          <h4 class="title is-5">Qwen3-VL</h4>
+          <p>
+            A large vision-language model producing semantic embeddings from
+            sampled video frames. It captures scene appearance, object context,
+            and high-level traffic semantics.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="box">
+          <h4 class="title is-5">Exo-Trajectory</h4>
+          <p>
+            An explicit trajectory matching algorithm that compares the motion of
+            surrounding traffic participants using Fréchet distance and the
+            Hungarian assignment algorithm.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="box">
+          <h4 class="title is-5">ScenarioFormer</h4>
+          <p>
+            A transformer-based trajectory encoder trained with contrastive
+            learning to generate compact scenario embeddings for efficient
+            large-scale retrieval.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Multimodal Fusion -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-3">
+          Multimodal Fusion
+        </h2>
+
+        <div class="content has-text-justified">
+
+          <p>
+            Visual and trajectory representations capture complementary notions of
+            scenario similarity. Instead of selecting a single modality, we combine
+            them through score-level fusion:
+          </p>
+
+          <p class="has-text-centered">
+          \[
+          s = \alpha s_{\text{traj}} + (1-\alpha)s_{\text{vision}}
+          \]
+          </p>
+
+          <p>
+          where \( \alpha \) controls the contribution of the trajectory representation. This simple score-level fusion consistently improves retrieval performance by leveraging both appearance and motion cues.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Qualitative Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-3">Qualitative Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We present qualitative retrieval results across a diverse set of driving
+            scenarios. The video compares the retrieved scenarios produced by the
+            proposed multimodal framework and individual retrieval modules,
+            illustrating how visual and trajectory representations capture
+            complementary notions of scenario similarity.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="hero is-light">
+  <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-example1">
+              <video poster="" id="example1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/example1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-example2">
+              <video poster="" id="example2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/example2.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-example3">
+              <video poster="" id="example3" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/example3.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-example4">
+              <video poster="" id="example4" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/example4.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-example5">
+              <video poster="" id="example5" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/example5.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-example6">
+              <video poster="" id="example6" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/example6.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-example7">
+              <video poster="" id="example7" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/example7.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+  </div>
+</section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@misc{matuszka2026multimodalscenariosimilaritysearch,
+      title={Multimodal Scenario Similarity Search for Autonomous Driving},
+      author={Tamás Matuszka and András Tamásy and Balázs Szolár},
+      year={2026},
+      eprint={2607.09428},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2607.09428},
 }</code></pre>
   </div>
 </section>
--->
+
 
 <footer class="footer">
   <div class="container">
