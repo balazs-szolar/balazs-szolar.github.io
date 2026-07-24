@@ -266,6 +266,183 @@
   </div>
 </section>
 
+<!-- Quantitative Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="content has-text-justified">
+
+          <p>
+            We evaluate retrieval performance on the dynamic subset of the
+            benchmark using three retrieval metrics: NDCG@10, Recall@15 with at
+            least two relevant scenarios, and Recall@15 with three relevant
+            scenarios. Higher values indicate better retrieval quality.
+            The results compare standalone vision-based and trajectory-based
+            retrieval approaches.
+          </p>
+
+        </div>
+
+
+        <h3 class="title is-4">Standalone Retrieval Performance</h3>
+
+        <div class="table-container">
+
+          <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>NDCG@10</th>
+                <th>Rec@15≥2</th>
+                <th>Rec@15(3)</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>ViViT</td>
+                <td>0.514</td>
+                <td>0.421</td>
+                <td>0.363</td>
+              </tr>
+
+              <tr>
+                <td>ScenarioFormer</td>
+                <td>0.565</td>
+                <td>0.441</td>
+                <td>0.388</td>
+              </tr>
+
+              <tr>
+                <td>Exo-Trajectory</td>
+                <td>0.565</td>
+                <td>0.475</td>
+                <td>0.434</td>
+              </tr>
+
+              <tr>
+                <td>Qwen3-VL</td>
+                <td><b>0.621</b></td>
+                <td><b>0.513</b></td>
+                <td><b>0.463</b></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p class="is-size-6 has-text-grey">
+          Table 1. Standalone retrieval performance on the dynamic subset of the
+          benchmark. Higher values indicate better retrieval performance.
+        </p>
+
+
+        <br>
+
+
+        <h3 class="title is-4">Score-Level Fusion Results</h3>
+
+        <div class="content has-text-justified">
+
+          <p>
+            Since visual and trajectory representations capture complementary
+            aspects of scenario similarity, we combine retrieval scores using
+            weighted score-level fusion. The parameter \( \alpha \) controls the
+            contribution of the trajectory-based similarity score. Fusion
+            consistently improves retrieval performance compared with the
+            corresponding vision-only baselines.
+          </p>
+
+        </div>
+
+
+        <div class="table-container">
+
+          <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+            <thead>
+              <tr>
+                <th>Fusion Method</th>
+                <th>α</th>
+                <th>NDCG@10</th>
+                <th>∆</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>ViViT + ScenarioFormer</td>
+                <td>0.4</td>
+                <td>0.599</td>
+                <td>+0.085</td>
+              </tr>
+
+              <tr>
+                <td>ViViT + Exo-Trajectory</td>
+                <td>0.5</td>
+                <td>0.616</td>
+                <td>+0.102</td>
+              </tr>
+
+              <tr>
+                <td>Qwen3-VL + ScenarioFormer</td>
+                <td>0.3</td>
+                <td>0.662</td>
+                <td>+0.041</td>
+              </tr>
+
+              <tr>
+                <td>Qwen3-VL + Exo-Trajectory</td>
+                <td>0.3</td>
+                <td><b>0.671</b></td>
+                <td><b>+0.050</b></td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p class="is-size-6 has-text-grey">
+          Table 2. Best score-level fusion results on the dynamic benchmark.
+          ∆ denotes the improvement in NDCG@10 over the corresponding
+          vision-only baseline.
+        </p>
+
+        <br>
+
+        <div class="content has-text-justified">
+
+          <p>
+            The results show that trajectory representations provide strong
+            complementary information for dynamic driving scenarios. While
+            Qwen3-VL achieves the strongest standalone performance, combining
+            visual and trajectory similarities further improves retrieval
+            quality. The best-performing configuration, Qwen3-VL combined with
+            Exo-Trajectory, achieves an NDCG@10 of <b>0.671</b>, demonstrating
+            the benefit of integrating appearance and motion information.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 <!-- Qualitative Results -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -278,13 +455,11 @@
         <div class="content has-text-justified">
           <p>
             We present qualitative retrieval results across a diverse set of driving
-            scenarios. The video compares the retrieved scenarios produced by the
+            scenarios. The below videos present a query video and the retrieved top 1 scenario using different methods.
+            The videos compare the retrieved scenarios produced by the
             proposed multimodal framework and individual retrieval modules,
             illustrating how visual and trajectory representations capture
             complementary notions of scenario similarity.
-          </p>
-          <p>
-            The below videos present a query video and the retrieved top 1 scenario using different methods.
           </p>
         </div>
 
