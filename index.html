@@ -267,27 +267,58 @@
 </section>
 
 <!-- Quantitative Results -->
+
 <section class="section">
+
   <div class="container is-max-desktop">
+
     <div class="columns is-centered">
+
       <div class="column is-full-width">
 
+
         <h2 class="title is-3">Quantitative Results</h2>
+
+
         <div class="content has-text-justified">
 
+          <h3 class="title is-4">Benchmark and Evaluation Protocol</h3>
+
           <p>
-            We evaluate retrieval performance on the dynamic subset of the
-            benchmark using three retrieval metrics: NDCG@10, Recall@15 with at
-            least two relevant scenarios, and Recall@15 with three relevant
-            scenarios. Higher values indicate better retrieval quality.
-            The results compare standalone vision-based and trajectory-based
-            retrieval approaches.
+            We evaluate our scenario retrieval framework on a dynamic subset of the
+            extended <b>aiMotive Multimodal Dataset</b>, containing seven
+            motion-centric driving scenarios including cut-ins, pedestrian crossings,
+            cyclist interactions, turning maneuvers, and traffic queueing.
+          </p>
+
+          <p>
+            The benchmark consists of <b>682 manually annotated clips</b> with graded
+            similarity labels ranging from 0 to 3. We use all 97 highly similar
+            scenarios as queries and evaluate retrieval performance using
+            <b>NDCG@10</b> as the primary metric, together with
+            <b>Recall@15≥2</b> and <b>Recall@15(3)</b>. Further details about the
+            dataset, annotation process, and evaluation protocol are provided in the
+            paper.
           </p>
 
         </div>
 
 
+
         <h3 class="title is-4">Standalone Retrieval Performance</h3>
+
+
+        <div class="content has-text-justified">
+
+          <p>
+            The below table compares individual retrieval modules using a unified query
+            set and candidate pool. Vision-based approaches capture appearance,
+            semantics, and scene context, while trajectory-based methods focus
+            explicitly on traffic dynamics and interactions.
+          </p>
+
+        </div>
+
 
         <div class="table-container">
 
@@ -326,7 +357,7 @@
               </tr>
 
               <tr>
-                <td>Qwen3-VL</td>
+                <td>Qwen3-VL-2B</td>
                 <td><b>0.621</b></td>
                 <td><b>0.513</b></td>
                 <td><b>0.463</b></td>
@@ -338,26 +369,28 @@
 
         </div>
 
+
         <p class="is-size-6 has-text-grey">
-          Table 1. Standalone retrieval performance on the dynamic subset of the
+          Standalone retrieval performance on the dynamic subset of the
           benchmark. Higher values indicate better retrieval performance.
         </p>
+
 
 
         <br>
 
 
-        <h3 class="title is-4">Score-Level Fusion Results</h3>
+
+        <h3 class="title is-4">Multimodal Score-Level Fusion</h3>
+
 
         <div class="content has-text-justified">
 
           <p>
-            Since visual and trajectory representations capture complementary
-            aspects of scenario similarity, we combine retrieval scores using
-            weighted score-level fusion. The parameter \( \alpha \) controls the
-            contribution of the trajectory-based similarity score. Fusion
-            consistently improves retrieval performance compared with the
-            corresponding vision-only baselines.
+            The below table reports the best-performing fusion settings
+            for each vision-trajectory combination. The improvement values
+            indicate the gain in NDCG@10 compared with the corresponding
+            vision-only baseline.
           </p>
 
         </div>
@@ -393,14 +426,14 @@
               </tr>
 
               <tr>
-                <td>Qwen3-VL + ScenarioFormer</td>
+                <td>Qwen3 + ScenarioFormer</td>
                 <td>0.3</td>
                 <td>0.662</td>
                 <td>+0.041</td>
               </tr>
 
               <tr>
-                <td>Qwen3-VL + Exo-Trajectory</td>
+                <td>Qwen3 + Exo-Trajectory</td>
                 <td>0.3</td>
                 <td><b>0.671</b></td>
                 <td><b>+0.050</b></td>
@@ -412,8 +445,9 @@
 
         </div>
 
+
         <p class="is-size-6 has-text-grey">
-          Table 2. Best score-level fusion results on the dynamic benchmark.
+          Best score-level fusion results on the dynamic benchmark.
           ∆ denotes the improvement in NDCG@10 over the corresponding
           vision-only baseline.
         </p>
@@ -423,13 +457,13 @@
         <div class="content has-text-justified">
 
           <p>
-            The results show that trajectory representations provide strong
-            complementary information for dynamic driving scenarios. While
-            Qwen3-VL achieves the strongest standalone performance, combining
-            visual and trajectory similarities further improves retrieval
-            quality. The best-performing configuration, Qwen3-VL combined with
-            Exo-Trajectory, achieves an NDCG@10 of <b>0.671</b>, demonstrating
-            the benefit of integrating appearance and motion information.
+            The results demonstrate that visual and trajectory representations
+            provide complementary information for scenario retrieval. While
+            Qwen3-VL provides the strongest standalone retrieval performance,
+            adding trajectory-based similarity consistently improves ranking
+            quality. The best-performing configuration, combining Qwen3-VL with
+            Exo-Trajectory, achieves an NDCG@10 of <b>0.671</b>, confirming the
+            benefit of integrating scene appearance and traffic dynamics.
           </p>
 
         </div>
